@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Customized</key>
+	<dict>
+		<key>Cut Lines</key>
+		<string>selectParagraph:, copy:, deleteBackward:, insertTab:, deleteBackward:</string>
+		<key>Move to Beginning of Paragraph Respecting Indent</key>
+		<string>moveToBeginningOfParagraph:, insertTab:, deleteBackward:</string>
+		<key>Insert Line Below</key>
+		<string>moveToEndOfParagraph:, insertNewline:</string>
+		<key>Insert Line Up</key>
+		<string>moveUp:, moveToEndOfParagraph:, insertNewline:</string>
+		<key>Paste Lines Below</key>
+		<string>moveToEndOfParagraph:, insertNewline:, paste:, deleteBackward:</string>
+		<key>Paste Lines Above</key>
+		<string>moveUp:, moveToEndOfParagraph:, insertNewline:, paste:, deleteBackward:</string>
+		<key>Copy Lines</key>
+		<string>selectParagraph:, copy:, moveForward:, moveBackward:</string>
+	</dict>
+</dict>
+</plist>

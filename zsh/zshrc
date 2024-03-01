@@ -1,0 +1,55 @@
+setopt EXTENDED_GLOB
+
+export PREFS=$(dirname "$0")
+path+=($PREFS $PREFS/**/*(N/) $PREFS/../ruby)
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+
+
+for f ($PREFS/**/*.zsh(N.))  . $f
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+# eval "$(goenv init -)"
+
+zstyle ':completion:*:*:git:*' script git-completion.zshx
+# `compinit` scans $fpath, so do this before calling it.
+fpath=($PREFS/macOS/zsh $fpath)
+#autoload -Uz compinit && compinit
+
+#for dump in ~/.zcompdump(N.mh+24); do
+#  compinit
+#done
+
+#compinit -C
+
+export VMS_BFF=/Users/jpz3562/Z/git/vms-bff
+export PSYCHOPASS_LIBRARY=/Users/jpz3562/Z/git/clova-vision-library
+export SWAGGEN=/Users/zedozedo/W/git/_/z/tools/SwagGen-4.7.0/.build/apple/Products/Release/swaggen
+export APIBFF=/Users/jpz3562/Z/git/vms-app-ios-api-bff
+export SWAGGER2OPENAPI=/Users/jpz3562/.nodenv/shims/swagger2openapi
+
+
+eval "$(/opt/homebrew/bin/brew shellenv)"

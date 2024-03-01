@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/zedozedo/W/w_git/OSM-Service-ghmaster/graphhopper/git/graphhopper-master'
+let g:netrw_dirhist_3='/Users/zedozedo'
+let g:netrw_dirhist_2='/Users/zedozedo/Library/Developer/Xcode/DerivedData/ashirase-aorgxstwpjbyhydgdwndppmugcgk/Build/Intermediates.noindex/ashirase.build/Index/DataStore'
+let g:netrw_dirhist_1='/Users/zedozedo'
