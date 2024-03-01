@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "keyrun",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/arczedo/keyrun",
+      "state" : {
+        "branch" : "main",
+        "revision" : "98ff92e109abfdd0258ecf65495b774846cd7d34"
+      }
+    }
+  ],
+  "version" : 2
+}
