@@ -1,0 +1,13 @@
+#!/bin/zsh -f -d
+#t=$(date +%Y_%m_%d_%H_%M_%S)
+#cp -r /Users/jpz3562/Z/W/git/markdown-editor-master /Users/jpz3562/Z/W/prefs/macOS/zsh/marks/$t
+
+file=$(osascript -e 'tell application "Finder" to get the POSIX path of (item 1 of (selection as alias list))')
+
+if [[ $file =~ \.md$ ]]; then
+    s64=$(node -e "const zlib = require('zlib');const fs = require('fs');var text = fs.readFileSync('$file', 'utf8'); console.log(zlib.deflateRawSync(text).toString('base64'))");
+
+    osascript -e 'tell application "Safari" to open location "file:///Users/jpz3562/Z/W/git/markdown-editor-master/index.html#'"$s64"'"'
+else
+    open 'file:///Users/jpz3562/Z/W/git/markdown-editor-master/index.html'
+fi
